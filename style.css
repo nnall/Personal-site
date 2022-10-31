@@ -1,0 +1,204 @@
+/*<a href="https://depositphotos.com/stock-photos/concepts.html">Blue sky with swirling clouds. Changes in the weather - depositphotos.com</a>*/
+/* Div Colors */
+/* Text */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box; /* padding & border are uncluded in height & width */
+}
+html h2 {
+  display: inline-block;
+}
+html h3 {
+  display: inline-block;
+  font-size: 5rem;
+}
+@keyframes iconWiggle {
+  1% {
+    transform: scale(0.3);
+  }
+  100% {
+    transform: scale(1.3);
+    filter: drop-shadow(0.2rem 0.45rem 0.5rem rgba(26, 26, 26, 0.4901960784));
+  }
+}
+html body {
+  box-sizing: border-box;
+  background-image: url(../img/sky.jpg);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  max-height: 100vh;
+  min-width: 100vw;
+  font-family: "Oswald", sans-serif;
+  padding-right: 2%;
+  /* ------------------- NAV BAR -------------------- */
+  /* <ul> */
+  /* <a> */
+  /* ------------------- ICON PANE, ICON LINKS -------------------- */
+}
+html body nav {
+  width: 75%;
+  height: 16rem;
+  position: fixed;
+  z-index: 900;
+  top: 2%;
+  right: 2%;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  font-size: 2.5rem;
+}
+html body .links {
+  width: 85%;
+  height: 40px;
+  margin-right: 3.5%;
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+}
+html body .link {
+  white-space: nowrap;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  color: white;
+  text-decoration: none;
+  pointer-events: auto;
+  text-transform: uppercase;
+  letter-spacing: 0.8rem;
+  font-weight: bold;
+  transition: all 0.15s ease-in-out;
+}
+html body .linkText span {
+  border: 2px solid white;
+}
+html body .musicText {
+  width: min-content;
+}
+@keyframes letterFall {
+  100% {
+    transform: translateY(300px);
+  }
+}
+html body .fall {
+  animation-name: letterFall;
+  animation-duration: 3s;
+}
+html body .iconPane {
+  position: fixed;
+  top: 15%;
+  right: 2%;
+  padding: 1rem;
+  /* <a> */
+}
+html body .iconPane .iconLink {
+  display: block;
+  margin: 2rem;
+  /* <svg> */
+}
+html body .iconPane .iconLink .icon {
+  fill: white;
+  height: 7rem;
+  width: 7rem;
+  filter: drop-shadow(0.2rem 0.45rem 0.5rem rgb(26, 26, 26));
+  animation-duration: 0.9s;
+  animation-timing-function: cubic-bezier(0.21, 2.11, 0, -0.32);
+  animation-fill-mode: forwards;
+}
+html body .iconPane .iconLink .icon:hover {
+  animation-name: iconWiggle;
+}
+html body #fullpage {
+  margin-left: 5vw;
+  margin-right: 5vw;
+  /* -------------------------- ABOUT ME (section) ------------------------- */
+  /* -------------------------- PROJECTS (section) --------------------------- */
+}
+html body #fullpage :svg {
+  overflow: visible;
+}
+html body #fullpage .sectionContainer {
+  display: flex;
+  align-items: center;
+  position: relative;
+  justify-content: center;
+  height: 100%;
+}
+html body #fullpage .centeringDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  font-size: 7rem;
+  position: relative;
+  width: 40%;
+  max-height: fit-content;
+  transform: translateY(300%);
+}
+html body #fullpage .centeringDiv .coffeeCupImg {
+  display: inline-block;
+  width: 100%;
+}
+html body #fullpage .centeringDiv .circleCenteringDiv {
+  width: 68%;
+  height: 68%;
+  position: absolute;
+  opacity: 1;
+  transform: translateX(-13%) translateY(-14%);
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  overflow: visible;
+}
+html body #fullpage .centeringDiv .circleCenteringDiv #bm {
+  position: absolute;
+  align-self: center;
+  justify-self: left;
+  height: 165%;
+  width: 165%;
+  padding-top: 22%;
+  overflow: visible;
+  justify-content: top;
+  align-content: left;
+  text-shadow: 0.2rem 0.45rem 0.5rem rgba(26, 26, 26, 0.4901960784);
+}
+html body #fullpage .aboutMeContainer {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  z-index: 1;
+  max-width: 100%;
+  border: 2px solid yellow;
+}
+html body #fullpage .aboutMeContainer .left, html body #fullpage .aboutMeContainer .right {
+  position: absolute;
+  height: 35%;
+  width: 40%;
+  display: flex;
+  border: 2px solid orange;
+}
+html body #fullpage .aboutMeContainer .aboutMePara {
+  display: inline-block;
+  margin-top: 3.5rem;
+  margin-left: 8rem;
+  font-size: 2.75rem;
+  line-height: 5rem;
+  letter-spacing: 0.1rem;
+}
+html body #fullpage .projectsContainer .projectsPara {
+  margin-top: 3.5rem;
+  margin-left: 8rem;
+  font-size: 2.75rem;
+  line-height: 5rem;
+  letter-spacing: 0.1rem;
+}
+
+/*# sourceMappingURL=style.css.map */

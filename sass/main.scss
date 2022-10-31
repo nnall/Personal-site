@@ -1,0 +1,403 @@
+
+/*<a href="https://depositphotos.com/stock-photos/concepts.html">Blue sky with swirling clouds. Changes in the weather - depositphotos.com</a>*/
+
+
+////////////////////////// Variables ////////////////////////
+
+/* Div Colors */
+$defaultDivBG: rgb(255, 251, 238); //haven't used yet
+
+
+/* Text */
+$headerTextColor:white;
+$textShadow:rgb(26, 26, 26);
+$textShadowTransparent:rgb(26, 26, 26, .35);
+$textShadowHovered:#1a1a1a7d; 
+
+
+$coffeeColorScroll: rgb(37, 16, 11);
+$coffeeColorHover: rgb(117, 55, 9);
+
+////////////////////////////////////////////////////////////
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+    
+  }
+
+html{
+font-size: 62.5%;
+box-sizing: border-box; /* padding & border are uncluded in height & width */
+// scroll-behavior: smooth;
+
+
+h2{
+    display: inline-block;
+    
+}
+h3{
+    display:inline-block;
+    font-size:5rem;
+}
+
+//////////// Animation ////////////
+
+@keyframes iconWiggle{
+
+1%{  
+    transform:scale(.3); 
+    
+}
+100% {
+    transform:scale(1.3);
+    filter: drop-shadow(.2rem .45rem .5rem $textShadowHovered);
+}       
+}
+  
+
+
+body{
+    // display:flex;
+    box-sizing: border-box;
+    background-image:url(../img/sky.jpg);
+    background-attachment:fixed; //keep background img in same spot regardless of scrolling
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size:cover; //must be 'cover' to have picture stretch over whole body
+    max-height:100vh;
+    min-width:100vw;
+    font-family: 'Oswald', sans-serif;
+    padding-right: 2%;
+
+
+    /* ------------------- NAV BAR -------------------- */
+
+    nav{
+        width:75%;
+        height:16rem;
+        position: fixed;
+        z-index:900;
+        top:2%;
+        right:2%; 
+
+        //Container settings
+        display: flex;
+        align-items:center;
+        justify-content: end;
+        font-size: 2.5rem; 
+
+    }
+
+    /* <ul> */
+    .links{
+        width:85%;
+        height:40px;
+        margin-right:3.5%;
+        display:flex;
+        justify-content:space-between;
+        // line-height: 1;
+        // border: 1px solid red;
+        list-style: none;
+        
+    }    
+
+    .linkBox{}; //housing parent div of each <a>
+
+
+    /* <a> */
+    .link{
+        white-space: nowrap;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding:0; 
+        color: $headerTextColor; 
+        text-decoration:none;
+        pointer-events: auto; // 
+        text-transform:uppercase;
+        letter-spacing: .8rem;
+        font-weight: bold;
+
+        //for loadup transition
+        // transform:translateY(-100px);
+        transition: all .15s ease-in-out;
+    }   
+     
+    
+    // letter <span>
+
+     .linkText{
+        // position:absolute;
+        // display:flex;
+        // justify-content:space-evenly;
+      
+        // padding:0;
+
+
+        span{
+        border: 2px solid white;
+        
+        // display:inline-block; 
+        }
+         
+    };
+
+ 
+
+    //set hard widths for linkTexts so <span>s remain spread out when they're pos'd absolute, in order to transformY from above. 
+
+    // .aboutMeText{
+    //     width:18.89%;
+
+    // }
+    // .projectsText{
+    //     width:18.99%;;
+    // }
+
+    // .musicText{
+    //     width: 11.73%;
+    // }
+
+    // .contactText{
+    //     width:min-content;
+        
+    // }
+
+
+    .musicText{
+        width:min-content;
+    };
+
+
+
+   
+
+
+
+////////// Animation : Link Letters fall into position at loadup //////////
+
+@keyframes letterFall{
+    100%{
+        transform:translateY(300px);
+    }
+}
+     
+.fall{
+    animation-name:letterFall;
+    animation-duration:3s;
+}
+
+
+// ABOUT ME letter fall animation
+
+
+// PROJECTS letter fall animation
+// ABOUT ME letter fall animation
+// ABOUT ME letter fall animation
+
+
+    
+///////////////////////
+
+
+    /* ------------------- ICON PANE, ICON LINKS -------------------- */
+
+    .iconPane{
+        position:fixed;
+        top:15%;
+        right:2%;
+        padding:1rem;
+        
+
+        /* <a> */
+        .iconLink{
+            display:block;
+            margin:2rem;
+
+            /* <svg> */
+            .icon{ 
+                fill: $headerTextColor;
+                height:7rem;
+                width:7rem;
+                filter: drop-shadow(.2rem .45rem .5rem $textShadow);
+                animation-duration:.9s;
+                animation-timing-function:cubic-bezier(.21,2.11,0,-0.32);
+                animation-fill-mode: forwards;
+                // transition: all .2s;
+            
+                &:hover{
+                    animation-name: iconWiggle;
+                    // fill:$coffeeColorHover;
+                    
+                }
+            }
+            
+        }
+    }
+
+    //////////////////////////// MAIN //////////////////////////////////////////
+    
+    #fullpage{
+        margin-left: 5vw;
+        margin-right:5vw;
+        
+        :svg{ overflow : visible ; }
+
+      .sectionContainer{
+        display:flex;
+        align-items: center;
+        position:relative;
+        justify-content:center;
+        height:100%;
+        
+      }
+      
+      .centeringDiv{
+        display:flex;
+        justify-content:center;
+        align-items: center;
+        padding:0;
+        font-size:7rem;
+        position:relative;
+        width:40%;
+        max-height:fit-content;
+        transform:translateY(300%);
+
+          
+        
+
+
+            .coffeeCupImg{
+                display:inline-block;
+                width:100%;     
+            }
+
+            .circleCenteringDiv{
+                width:68%;
+                height:68%;
+                position:absolute;
+                opacity: 1;
+                // fill:transparent;
+                transform:translateX(-13%) translateY(-14%); // put this back to previous settings and instead adjust the 'coffeeCupImgCircle' class. 
+
+                display: flex;
+                justify-content:center; //for the text
+                align-content: center;  //for the text
+                overflow:visible;
+                
+
+
+                
+                #bm{
+                    position:absolute;
+                    align-self:center;
+                    justify-self:left;
+
+                    
+                    height:165%;
+                    width:165%;
+                    padding-top:22%;
+                    // top:-400px;
+                    
+                    
+                    overflow:visible;
+                    justify-content:top;
+                    align-content: left;
+                    text-shadow:(.2rem .45rem .5rem $textShadowHovered);
+                    
+                   
+                    // border:solid 2px yellow;
+
+                  
+                    
+                }
+            }
+        }
+
+    /* -------------------------- ABOUT ME (section) ------------------------- */
+    .aboutMeContainer{
+        display:flex;
+        justify-content:space-evenly;
+        align-items:center;
+        z-index:1; //trying to force underneath nav links'
+        max-width:100%;
+        border: 2px solid yellow;
+
+
+
+        .left, .right{
+            position: absolute;
+            height:35%;
+            width:40%;
+            display:flex;
+            border: 2px solid orange;   
+        }
+
+
+        .aboutMePara{
+            display:inline-block;
+            margin-top:3.5rem;
+            margin-left:8rem;
+            font-size:2.75rem;
+            line-height:5rem;
+            letter-spacing: .1rem;
+        }
+    }
+
+    /* -------------------------- PROJECTS (section) --------------------------- */
+
+    .projectsContainer{
+
+        .projectsPara{
+            
+            margin-top:3.5rem;
+            margin-left:8rem;
+            font-size:2.75rem;
+            line-height:5rem;
+            letter-spacing: .1rem;
+        }
+
+    }
+//main
+}
+//body           
+}
+//html
+}  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

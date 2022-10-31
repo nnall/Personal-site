@@ -1,0 +1,22 @@
+{
+  "name": "mysite",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "compile:sass": "sass sass/main.scss style.css -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nnall/personal-site.git"
+  },
+  "author": "Nick Nall",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nnall/personal-site/issues"
+  },
+  "homepage": "https://github.com/nnall/personal-site#readme",
+  "devDependencies": {
+    "sass": "^1.55.0"
+  }
+}
